@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="cineplanet_">
+        
+    <wb-module deploy-name="cineplanet_integrador-master">
+                
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+                
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-        <property name="context-root" value="cineplanet_"/>
-        <property name="java-output-path" value="/cineplanet_/build/classes"/>
+                
+        <property name="java-output-path" value="/cineplanet_integrador-master/build/classes"/>
+        <property name="context-root" value="cineplanet_integrador-master"/>
+            
     </wb-module>
+    
 </project-modules>

@@ -1,11 +1,11 @@
 const productos = {
     promocional: [
-        { img: 'promo1.jpg', nombre: 'COMBO DOS SALADO + 2M&M OL', descripcion: '1 Canchita Gigante (Salada) + 2 Bebida (32oz) + 2 M&Ms. *Sabor bebida y M&Ms sujeto a stock / canchita sin refill', precio: 30.00 },
-        { img: 'promo2.jpg', nombre: 'COMBO DOS DULCE + 2M&M OL', descripcion: '1 Canchita Grande (Dulce) + 2 Bebida (32oz) + 2 M&Ms. *Sabor bebida y M&Ms sujeto a stock / canchita sin refill', precio: 20.00 },
-        { img: 'promo3.jpg', nombre: 'COMBO DOS MIX + 2M&M OL', descripcion: '1 Canchita Gigante (Mix) + 2 Bebida (32oz) + 2 M&Ms. *Sabor bebida y M&Ms sujeto a stock / canchita sin refill ', precio: 35.00 },
-        { img: 'promo4.jpg', nombre: 'COMBO UNO SALADO + M&M OL', descripcion: '1 Canchita Grande (Salada) + 1 Bebida (32oz) + 1 M&Ms. *Sabor bebida y M&Ms sujeto a stock / canchita sin refill', precio: 35.00 },
-        { img: 'promo5.jpg', nombre: 'COMBO UNO DULCE + M&M OL', descripcion: '1 Canchita Grande (Dulce) + 1 Bebida (32oz) + 1 M&Ms. *Sabor bebida y M&Ms sujeto a stock / canchita sin refill', precio: 35.00 },
-		{ img: 'promo6.jpg', nombre: 'COMBO 2 SALADO + 2 DUOMÁX OL', descripcion: '1 Canchita Gigante (Salado) + 2 Bebidas (32oz) + 2 DUOMÁX. *Sabor bebida sujeto a stock / canchita sin refill', precio: 30.00 }
+        { img: '3033.png', nombre: 'COMBO DOS SALADO + 2M&M OL', descripcion: '1 Canchita Gigante (Salada) + 2 Bebida (32oz) + 2 M&Ms. *Sabor bebida y M&Ms sujeto a stock / canchita sin refill', precio: 30.00 },
+        { img: '3034.png', nombre: 'COMBO DOS DULCE + 2M&M OL', descripcion: '1 Canchita Grande (Dulce) + 2 Bebida (32oz) + 2 M&Ms. *Sabor bebida y M&Ms sujeto a stock / canchita sin refill', precio: 20.00 },
+        { img: '3035.png', nombre: 'COMBO DOS MIX + 2M&M OL', descripcion: '1 Canchita Gigante (Mix) + 2 Bebida (32oz) + 2 M&Ms. *Sabor bebida y M&Ms sujeto a stock / canchita sin refill ', precio: 35.00 },
+        { img: '3036.png', nombre: 'COMBO UNO SALADO + M&M OL', descripcion: '1 Canchita Grande (Salada) + 1 Bebida (32oz) + 1 M&Ms. *Sabor bebida y M&Ms sujeto a stock / canchita sin refill', precio: 35.00 },
+        { img: '3037.png', nombre: 'COMBO UNO DULCE + M&M OL', descripcion: '1 Canchita Grande (Dulce) + 1 Bebida (32oz) + 1 M&Ms. *Sabor bebida y M&Ms sujeto a stock / canchita sin refill', precio: 35.00 },
+		{ img: '2799.jpg', nombre: 'COMBO 2 SALADO + 2 DUOMÁX OL', descripcion: '1 Canchita Gigante (Salado) + 2 Bebidas (32oz) + 2 DUOMÁX. *Sabor bebida sujeto a stock / canchita sin refill', precio: 30.00 }
     ],
     cancha: [
         { img: 'promo1.jpg', nombre: 'Promo 1', descripcion: 'Descripción promo 1', precio: 30.00 },
