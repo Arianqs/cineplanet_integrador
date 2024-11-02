@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="Conexion.conexion" %>
+<%@ page import="java.sql.*" %>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,6 +12,17 @@
     <link rel="stylesheet" href="styles.css">
     
 </head>
+
+	<%
+    Connection conn = null;
+    Statement stmt = null;
+    ResultSet rs = null;
+    try {
+        conn = conexion.getConnection();
+        stmt = conn.createStatement();
+        String query = "SELECT * FROM dulceria";
+        rs = stmt.executeQuery(query);
+	%>
 <style>
 /* General Reset */
 
@@ -380,20 +394,42 @@ display: block;
 
 
 }
-.btn-continuar{
-	font-size: 16px;
-	line-height: 24px;
-	text-align: left;
-	word-spacing: 0px;
-	height: 43.7969px;
-	width: 132.609px;
-	position: relative;
-	display: inline-block;
-	top: 0px;
-	bottom: 0px;
-	right: 0px;
-	left: 0px;
-	
+.btn-continuar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#continuar-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: not-allowed;
+    transition: all 0.3s ease;
+    background-color: #cccccc; /* Color cuando está deshabilitado */
+    color: #666666;
+}
+
+#continuar-btn.active {
+    background-color: #007bff; /* Color cuando está activo */
+    color: white;
+    cursor: pointer;
+}
+
+#continuar-btn:hover.active {
+    background-color: #0056b3; /* Color más oscuro al hover cuando está activo */
+}
+
+/* Estilo para el botón deshabilitado */
+#continuar-btn:disabled {
+    opacity: 0.7;
+}
+
+/* Asegurarse que el botón siempre sea visible sobre otros elementos */
+.btn-continuar {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .quantity-selector {
@@ -545,7 +581,30 @@ display: block;
 
             <!-- Sección de productos -->
             <div class="productos-contenedor">
-            <section id="products-grid" class="products-grid"></section>
+            <div id="products-grid" class="products-grid">
+    <% while (rs.next()) { %>
+        <div class="product-card">
+            <img src="<%= rs.getString("img_url") %>" alt="<%= rs.getString("nombre_producto") %>">
+            <h2><%= rs.getString("nombre_producto") %></h2>
+            <p><%= rs.getString("descripcion") %></p>
+            <p class="price">S/<%= rs.getDouble("precio") %></p>
+            <div class="quantity-selector">
+                <button onclick="actualizarCantidad('<%= rs.getInt("id_producto") %>', -1)">-</button>
+                <span id="cantidad-<%= rs.getInt("id_producto") %>">0</span>
+                <button onclick="actualizarCantidad('<%= rs.getInt("id_producto") %>', 1)">+</button>
+            			</div>
+        			</div>
+    			<% } %>
+			</div>
+            <%
+    } catch (SQLException e) {
+        e.printStackTrace();
+    } finally {
+        if (rs != null) rs.close();
+        if (stmt != null) stmt.close();
+        if (conn != null) conn.close();
+    }
+			%>
             
             </div>
             
@@ -553,7 +612,7 @@ display: block;
             <div class="contenedor-btn-continuar">
             <div	class="contenedor-btn"	>
             <div class="btn-continuar">
-                <button onclick="continuarCompra()" id="continuar-btn" style="display: none;">Continuar</button>
+                <button id="continuar-btn" >Continuar</button>
             </div>
             
             </div>
